@@ -1,0 +1,152 @@
+.navbar{
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    color: #e5e5e5;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.7) 10%, transparent);
+    z-index: 20;
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.navbar-left img {
+  width: 90px;
+}
+
+.navbar-left ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.navbar-left ul li{
+    cursor: pointer;
+}
+.navbar-left ul li a{
+    color: #e5e5e5;
+    text-decoration: none;
+}
+.navbar-left ul li a.active{
+    color: white;
+    font-weight: 700;
+}
+.navbar-left ul li a:hover{
+    color: #b3b3b3;
+}
+.navbar-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.navbar-right .icons {
+  width: 20px;
+  cursor: pointer;
+}
+.navbar-right .profile {
+  border-radius: 4px;
+  width: 35px;
+}.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.navbar .dropdown{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max-content;
+    background: #191919;
+    padding: 18px 22px;
+    border-radius: 2px;
+    text-decoration: underline;
+    z-index: 1;
+    display:none;
+}
+.navbar .dropdown p{
+    font-size: 13px;
+    cursor: pointer;
+}
+.navbar-profile:hover .dropdown{
+    display: block;
+}
+.hamburger{
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+.mobile-nav{
+    display: none;
+    list-style: none;
+    width: 100%;
+    order: 3;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 0 4px;
+}
+.search-form{
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.25s ease;
+}
+.search-form.is-open{
+    max-width: 200px;
+}
+.search-form input{
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid #737373;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 2px;
+    font-size: 13px;
+}
+.nav-dark{
+  background: #141414;
+}
+@media (max-width: 800px) {
+  .navbar{
+    padding: 20px 4%;
+    flex-wrap: wrap;
+  }
+  .hamburger{
+    display: block;
+  }
+  .desktop-nav{
+    display: none;
+  }
+  .mobile-nav{
+    display: flex;
+  }
+  .navbar img{
+    height: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .navbar img{
+    height: 20px;
+  }
+  .navbar-right{
+    gap: 8px;
+  }
+  .navbar-right p{
+    display: none;
+  }
+  .search-form.is-open{
+    max-width: 130px;
+  }
+  .navbar-profile img.profile{
+    width: 28px;
+  }
+}
